@@ -7,6 +7,8 @@ export interface AdminSiteData {
   public: boolean;
   eventsLast24Hours: number;
   eventsLast30Days: number;
+  goalsCount: number;
+  funnelsCount: number;
   organizationOwnerEmail: string | null;
   subscription: {
     planName: string;

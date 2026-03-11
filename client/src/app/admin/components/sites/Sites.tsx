@@ -102,6 +102,16 @@ export function Sites() {
         cell: ({ row }) => <div>{formatter(Number(row.getValue("eventsLast30Days")))}</div>,
       },
       {
+        accessorKey: "goalsCount",
+        header: ({ column }) => <SortableHeader column={column}>{t("Goals")}</SortableHeader>,
+        cell: ({ row }) => <div>{row.getValue("goalsCount")}</div>,
+      },
+      {
+        accessorKey: "funnelsCount",
+        header: ({ column }) => <SortableHeader column={column}>{t("Funnels")}</SortableHeader>,
+        cell: ({ row }) => <div>{row.getValue("funnelsCount")}</div>,
+      },
+      {
         id: "subscription",
         header: ({ column }) => <SortableHeader column={column}>{t("Subscription")}</SortableHeader>,
         accessorFn: row => row.subscription.planName,
@@ -193,6 +203,12 @@ export function Sites() {
                     </TableCell>
                     <TableCell>
                       <Skeleton className="h-5 w-16" />
+                    </TableCell>
+                    <TableCell>
+                      <Skeleton className="h-5 w-12" />
+                    </TableCell>
+                    <TableCell>
+                      <Skeleton className="h-5 w-12" />
                     </TableCell>
                     <TableCell>
                       <Skeleton className="h-5 w-20" />
