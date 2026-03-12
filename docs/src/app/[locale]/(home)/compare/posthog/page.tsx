@@ -12,13 +12,13 @@ export const metadata: Metadata = {
     description: "PostHog does everything. Rybbit does web analytics perfectly. Compare the approaches.",
     type: "website",
     url: "https://rybbit.com/compare/posthog",
-    images: [createOGImageUrl("Rybbit vs PostHog: Focused Analytics vs Feature Bloat", "PostHog does everything. Rybbit does web analytics perfectly. Compare the approaches.")],
+    images: [createOGImageUrl("Rybbit vs PostHog: Focused Analytics vs Feature Bloat", "PostHog does everything. Rybbit does web analytics perfectly. Compare the approaches.", "Compare")],
   },
   twitter: {
     card: "summary_large_image",
     title: "Rybbit vs PostHog Comparison",
     description: "Focused web analytics vs all-in-one platform. Which approach fits your needs?",
-    images: [createOGImageUrl("Rybbit vs PostHog Comparison", "Focused web analytics vs all-in-one platform. Which approach fits your needs?")],
+    images: [createOGImageUrl("Rybbit vs PostHog Comparison", "Focused web analytics vs all-in-one platform. Which approach fits your needs?", "Compare")],
   },
   alternates: {
     canonical: "https://rybbit.com/compare/posthog",

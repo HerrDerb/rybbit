@@ -22,7 +22,8 @@ export const metadata: Metadata = {
     images: [
       createOGImageUrl(
         "User Profiles",
-        "Identify users, track traits, and see their complete activity history."
+        "Identify users, track traits, and see their complete activity history.",
+        "Features"
       ),
     ],
   },
@@ -34,7 +35,8 @@ export const metadata: Metadata = {
     images: [
       createOGImageUrl(
         "User Profiles",
-        "Identify users, track traits, and see their complete activity history."
+        "Identify users, track traits, and see their complete activity history.",
+        "Features"
       ),
     ],
   },

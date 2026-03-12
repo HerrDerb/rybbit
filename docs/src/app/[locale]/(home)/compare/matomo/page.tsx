@@ -12,13 +12,13 @@ export const metadata: Metadata = {
     description: "Side-by-side comparison of Rybbit and Matomo. Modern, privacy-first analytics vs legacy PHP system.",
     type: "website",
     url: "https://rybbit.com/compare/matomo",
-    images: [createOGImageUrl("Rybbit vs Matomo: Which Analytics Platform is Right for You?", "Side-by-side comparison of Rybbit and Matomo. Modern, privacy-first analytics vs legacy PHP system.")],
+    images: [createOGImageUrl("Rybbit vs Matomo: Which Analytics Platform is Right for You?", "Side-by-side comparison of Rybbit and Matomo. Modern, privacy-first analytics vs legacy PHP system.", "Compare")],
   },
   twitter: {
     card: "summary_large_image",
     title: "Rybbit vs Matomo Comparison",
     description: "Compare Rybbit and Matomo analytics. See which open-source platform fits your needs.",
-    images: [createOGImageUrl("Rybbit vs Matomo Comparison", "Compare Rybbit and Matomo analytics. See which open-source platform fits your needs.")],
+    images: [createOGImageUrl("Rybbit vs Matomo Comparison", "Compare Rybbit and Matomo analytics. See which open-source platform fits your needs.", "Compare")],
   },
   alternates: {
     canonical: "https://rybbit.com/compare/matomo",

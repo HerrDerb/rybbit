@@ -22,7 +22,8 @@ export const metadata: Metadata = {
     images: [
       createOGImageUrl(
         "Web Vitals Monitoring",
-        "Real user Core Web Vitals monitoring. LCP, FID/INP, CLS with percentile analysis."
+        "Real user Core Web Vitals monitoring. LCP, FID/INP, CLS with percentile analysis.",
+        "Features"
       ),
     ],
   },
@@ -34,7 +35,8 @@ export const metadata: Metadata = {
     images: [
       createOGImageUrl(
         "Web Vitals Monitoring",
-        "Real user Core Web Vitals monitoring. LCP, FID/INP, CLS with percentile analysis."
+        "Real user Core Web Vitals monitoring. LCP, FID/INP, CLS with percentile analysis.",
+        "Features"
       ),
     ],
   },

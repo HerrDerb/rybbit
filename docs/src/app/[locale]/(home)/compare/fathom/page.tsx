@@ -12,13 +12,13 @@ export const metadata: Metadata = {
     description: "Fathom is simple. Rybbit is simple AND powerful. Compare session replay, funnels, and more.",
     type: "website",
     url: "https://rybbit.com/compare/fathom",
-    images: [createOGImageUrl("Rybbit vs Fathom: More Features, Same Privacy Focus", "Fathom is simple. Rybbit is simple AND powerful. Compare session replay, funnels, and more.")],
+    images: [createOGImageUrl("Rybbit vs Fathom: More Features, Same Privacy Focus", "Fathom is simple. Rybbit is simple AND powerful. Compare session replay, funnels, and more.", "Compare")],
   },
   twitter: {
     card: "summary_large_image",
     title: "Rybbit vs Fathom Analytics",
     description: "Privacy-first analytics compared. See which offers more value.",
-    images: [createOGImageUrl("Rybbit vs Fathom Analytics", "Privacy-first analytics compared. See which offers more value.")],
+    images: [createOGImageUrl("Rybbit vs Fathom Analytics", "Privacy-first analytics compared. See which offers more value.", "Compare")],
   },
   alternates: {
     canonical: "https://rybbit.com/compare/fathom",

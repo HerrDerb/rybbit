@@ -25,7 +25,8 @@ export const metadata: Metadata = {
     images: [
       createOGImageUrl(
         "Rybbit vs The Competition",
-        "Side-by-side comparisons with every major analytics platform."
+        "Side-by-side comparisons with every major analytics platform.",
+        "Compare"
       ),
     ],
   },
@@ -37,7 +38,8 @@ export const metadata: Metadata = {
     images: [
       createOGImageUrl(
         "Rybbit vs The Competition",
-        "Compare Rybbit with Google Analytics, Plausible, PostHog, and more."
+        "Compare Rybbit with Google Analytics, Plausible, PostHog, and more.",
+        "Compare"
       ),
     ],
   },

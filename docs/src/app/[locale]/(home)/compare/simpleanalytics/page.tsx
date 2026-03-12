@@ -12,13 +12,13 @@ export const metadata: Metadata = {
     description: "Simple Analytics keeps it basic. Rybbit adds power without complexity. Compare features.",
     type: "website",
     url: "https://rybbit.com/compare/simpleanalytics",
-    images: [createOGImageUrl("Rybbit vs Simple Analytics: Simple AND Powerful", "Simple Analytics keeps it basic. Rybbit adds power without complexity. Compare features.")],
+    images: [createOGImageUrl("Rybbit vs Simple Analytics: Simple AND Powerful", "Simple Analytics keeps it basic. Rybbit adds power without complexity. Compare features.", "Compare")],
   },
   twitter: {
     card: "summary_large_image",
     title: "Rybbit vs Simple Analytics",
     description: "Privacy-first analytics compared. See which offers the best value.",
-    images: [createOGImageUrl("Rybbit vs Simple Analytics", "Privacy-first analytics compared. See which offers the best value.")],
+    images: [createOGImageUrl("Rybbit vs Simple Analytics", "Privacy-first analytics compared. See which offers the best value.", "Compare")],
   },
   alternates: {
     canonical: "https://rybbit.com/compare/simpleanalytics",

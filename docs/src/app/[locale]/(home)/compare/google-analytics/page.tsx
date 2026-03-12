@@ -13,13 +13,13 @@ export const metadata: Metadata = {
       "Why thousands are switching from Google Analytics to Rybbit. Open-source, cookie-free, GDPR compliant.",
     type: "website",
     url: "https://rybbit.com/compare/google-analytics",
-    images: [createOGImageUrl("Rybbit vs Google Analytics: The Privacy-First Alternative", "Why thousands are switching from Google Analytics to Rybbit. Open-source, cookie-free, GDPR compliant.")],
+    images: [createOGImageUrl("Rybbit vs Google Analytics: The Privacy-First Alternative", "Why thousands are switching from Google Analytics to Rybbit. Open-source, cookie-free, GDPR compliant.", "Compare")],
   },
   twitter: {
     card: "summary_large_image",
     title: "Rybbit vs Google Analytics",
     description: "The privacy-first Google Analytics alternative. Compare features side-by-side.",
-    images: [createOGImageUrl("Rybbit vs Google Analytics", "The privacy-first Google Analytics alternative. Compare features side-by-side.")],
+    images: [createOGImageUrl("Rybbit vs Google Analytics", "The privacy-first Google Analytics alternative. Compare features side-by-side.", "Compare")],
   },
   alternates: {
     canonical: "https://rybbit.com/compare/google-analytics",

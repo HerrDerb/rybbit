@@ -22,7 +22,8 @@ export const metadata: Metadata = {
     images: [
       createOGImageUrl(
         "Conversion Goals",
-        "Set conversion goals and track completions in real time."
+        "Set conversion goals and track completions in real time.",
+        "Features"
       ),
     ],
   },
@@ -34,7 +35,8 @@ export const metadata: Metadata = {
     images: [
       createOGImageUrl(
         "Conversion Goals",
-        "Set conversion goals and track completions in real time."
+        "Set conversion goals and track completions in real time.",
+        "Features"
       ),
     ],
   },

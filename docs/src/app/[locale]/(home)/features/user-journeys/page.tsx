@@ -22,7 +22,8 @@ export const metadata: Metadata = {
     images: [
       createOGImageUrl(
         "User Journeys",
-        "See how users actually navigate your site with interactive Sankey flow diagrams."
+        "See how users actually navigate your site with interactive Sankey flow diagrams.",
+        "Features"
       ),
     ],
   },
@@ -34,7 +35,8 @@ export const metadata: Metadata = {
     images: [
       createOGImageUrl(
         "User Journeys",
-        "See how users actually navigate your site with interactive Sankey flow diagrams."
+        "See how users actually navigate your site with interactive Sankey flow diagrams.",
+        "Features"
       ),
     ],
   },

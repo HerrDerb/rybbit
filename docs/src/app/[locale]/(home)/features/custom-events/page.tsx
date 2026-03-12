@@ -22,7 +22,8 @@ export const metadata: Metadata = {
     images: [
       createOGImageUrl(
         "Custom Events",
-        "Track any user interaction with one line of code. Custom properties, real-time stream, autocapture."
+        "Track any user interaction with one line of code. Custom properties, real-time stream, autocapture.",
+        "Features"
       ),
     ],
   },
@@ -34,7 +35,8 @@ export const metadata: Metadata = {
     images: [
       createOGImageUrl(
         "Custom Events",
-        "Track any user interaction with one line of code."
+        "Track any user interaction with one line of code.",
+        "Features"
       ),
     ],
   },

@@ -22,7 +22,8 @@ export const metadata: Metadata = {
     images: [
       createOGImageUrl(
         "Retention Analysis",
-        "Cohort retention analysis. See which users come back and when they stop."
+        "Cohort retention analysis. See which users come back and when they stop.",
+        "Features"
       ),
     ],
   },
@@ -34,7 +35,8 @@ export const metadata: Metadata = {
     images: [
       createOGImageUrl(
         "Retention Analysis",
-        "Cohort retention analysis. See which users come back and when they stop."
+        "Cohort retention analysis. See which users come back and when they stop.",
+        "Features"
       ),
     ],
   },

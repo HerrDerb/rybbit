@@ -22,7 +22,8 @@ export const metadata: Metadata = {
     images: [
       createOGImageUrl(
         "Sessions",
-        "Browse individual user sessions with metadata, event timelines, and one-click filtering."
+        "Browse individual user sessions with metadata, event timelines, and one-click filtering.",
+        "Features"
       ),
     ],
   },
@@ -34,7 +35,8 @@ export const metadata: Metadata = {
     images: [
       createOGImageUrl(
         "Sessions",
-        "Browse individual user sessions with metadata, event timelines, and one-click filtering."
+        "Browse individual user sessions with metadata, event timelines, and one-click filtering.",
+        "Features"
       ),
     ],
   },

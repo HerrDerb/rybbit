@@ -12,13 +12,13 @@ export const metadata: Metadata = {
     description: "Cloudflare is free but limited. Rybbit offers the full analytics experience. Compare features.",
     type: "website",
     url: "https://rybbit.com/compare/cloudflare-analytics",
-    images: [createOGImageUrl("Rybbit vs Cloudflare Analytics: Basic vs Full-Featured", "Cloudflare is free but limited. Rybbit offers the full analytics experience. Compare features.")],
+    images: [createOGImageUrl("Rybbit vs Cloudflare Analytics: Basic vs Full-Featured", "Cloudflare is free but limited. Rybbit offers the full analytics experience. Compare features.", "Compare")],
   },
   twitter: {
     card: "summary_large_image",
     title: "Rybbit vs Cloudflare Analytics",
     description: "Free basic analytics vs full-featured platform. See the difference.",
-    images: [createOGImageUrl("Rybbit vs Cloudflare Analytics", "Free basic analytics vs full-featured platform. See the difference.")],
+    images: [createOGImageUrl("Rybbit vs Cloudflare Analytics", "Free basic analytics vs full-featured platform. See the difference.", "Compare")],
   },
   alternates: {
     canonical: "https://rybbit.com/compare/cloudflare-analytics",

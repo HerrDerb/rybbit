@@ -22,7 +22,8 @@ export const metadata: Metadata = {
     images: [
       createOGImageUrl(
         "Web Analytics",
-        "Real-time, privacy-first web analytics. One script, full dashboard."
+        "Real-time, privacy-first web analytics. One script, full dashboard.",
+        "Features"
       ),
     ],
   },
@@ -34,7 +35,8 @@ export const metadata: Metadata = {
     images: [
       createOGImageUrl(
         "Web Analytics",
-        "Real-time, privacy-first web analytics. One script, full dashboard."
+        "Real-time, privacy-first web analytics. One script, full dashboard.",
+        "Features"
       ),
     ],
   },

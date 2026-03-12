@@ -22,7 +22,8 @@ export const metadata: Metadata = {
     images: [
       createOGImageUrl(
         "Conversion Funnels",
-        "Find where users drop off. Build conversion funnels with real-time data."
+        "Find where users drop off. Build conversion funnels with real-time data.",
+        "Features"
       ),
     ],
   },
@@ -34,7 +35,8 @@ export const metadata: Metadata = {
     images: [
       createOGImageUrl(
         "Conversion Funnels",
-        "Find where users drop off. Build conversion funnels with real-time data."
+        "Find where users drop off. Build conversion funnels with real-time data.",
+        "Features"
       ),
     ],
   },

@@ -22,7 +22,8 @@ export const metadata: Metadata = {
     images: [
       createOGImageUrl(
         "Error Tracking",
-        "Automatic JavaScript error monitoring built into your analytics."
+        "Automatic JavaScript error monitoring built into your analytics.",
+        "Features"
       ),
     ],
   },
@@ -34,7 +35,8 @@ export const metadata: Metadata = {
     images: [
       createOGImageUrl(
         "Error Tracking",
-        "Automatic JavaScript error monitoring built into your analytics."
+        "Automatic JavaScript error monitoring built into your analytics.",
+        "Features"
       ),
     ],
   },

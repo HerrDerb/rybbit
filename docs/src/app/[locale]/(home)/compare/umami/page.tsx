@@ -12,13 +12,13 @@ export const metadata: Metadata = {
     description: "Two open-source analytics platforms compared. See which offers more features and flexibility.",
     type: "website",
     url: "https://rybbit.com/compare/umami",
-    images: [createOGImageUrl("Rybbit vs Umami: Open-Source Analytics Head-to-Head", "Two open-source analytics platforms compared. See which offers more features and flexibility.")],
+    images: [createOGImageUrl("Rybbit vs Umami: Open-Source Analytics Head-to-Head", "Two open-source analytics platforms compared. See which offers more features and flexibility.", "Compare")],
   },
   twitter: {
     card: "summary_large_image",
     title: "Rybbit vs Umami Comparison",
     description: "Open-source analytics showdown. Compare features, hosting options, and more.",
-    images: [createOGImageUrl("Rybbit vs Umami Comparison", "Open-source analytics showdown. Compare features, hosting options, and more.")],
+    images: [createOGImageUrl("Rybbit vs Umami Comparison", "Open-source analytics showdown. Compare features, hosting options, and more.", "Compare")],
   },
   alternates: {
     canonical: "https://rybbit.com/compare/umami",

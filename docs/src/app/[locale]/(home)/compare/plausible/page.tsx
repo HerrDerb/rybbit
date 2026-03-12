@@ -12,13 +12,13 @@ export const metadata: Metadata = {
     description: "Both respect privacy, but Rybbit offers more power. Compare session replay, funnels, and pricing.",
     type: "website",
     url: "https://rybbit.com/compare/plausible",
-    images: [createOGImageUrl("Rybbit vs Plausible: Which Privacy-First Analytics Wins?", "Both respect privacy, but Rybbit offers more power. Compare session replay, funnels, and pricing.")],
+    images: [createOGImageUrl("Rybbit vs Plausible: Which Privacy-First Analytics Wins?", "Both respect privacy, but Rybbit offers more power. Compare session replay, funnels, and pricing.", "Compare")],
   },
   twitter: {
     card: "summary_large_image",
     title: "Rybbit vs Plausible Comparison",
     description: "Privacy-first analytics showdown. See which platform offers more value.",
-    images: [createOGImageUrl("Rybbit vs Plausible Comparison", "Privacy-first analytics showdown. See which platform offers more value.")],
+    images: [createOGImageUrl("Rybbit vs Plausible Comparison", "Privacy-first analytics showdown. See which platform offers more value.", "Compare")],
   },
   alternates: {
     canonical: "https://rybbit.com/compare/plausible",

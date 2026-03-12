@@ -22,7 +22,8 @@ export const metadata: Metadata = {
     images: [
       createOGImageUrl(
         "Session Replay",
-        "See exactly what your users do. Privacy-first session replay built into your analytics."
+        "See exactly what your users do. Privacy-first session replay built into your analytics.",
+        "Features"
       ),
     ],
   },
@@ -34,7 +35,8 @@ export const metadata: Metadata = {
     images: [
       createOGImageUrl(
         "Session Replay",
-        "See exactly what your users do. Privacy-first session replay built into your analytics."
+        "See exactly what your users do. Privacy-first session replay built into your analytics.",
+        "Features"
       ),
     ],
   },
