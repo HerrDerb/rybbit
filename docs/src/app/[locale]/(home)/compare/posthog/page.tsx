@@ -1,6 +1,5 @@
 import { ComparisonPage } from "../components/ComparisonPage";
-import { posthogComparisonData } from "./comparison-data";
-import { PostHogComparisonContent } from "./ComparisonContent";
+import { posthogComparisonData, posthogExtendedData } from "./comparison-data";
 import type { Metadata } from "next";
 import { createOGImageUrl } from "@/lib/metadata";
 
@@ -80,7 +79,15 @@ export default function PostHog() {
       <ComparisonPage
         competitorName="PostHog"
         sections={posthogComparisonData}
-        comparisonContent={<PostHogComparisonContent />}
+        subtitle={posthogExtendedData.subtitle}
+        introHeading={posthogExtendedData.introHeading}
+        introParagraphs={posthogExtendedData.introParagraphs}
+        chooseRybbit={posthogExtendedData.chooseRybbit}
+        chooseCompetitor={posthogExtendedData.chooseCompetitor}
+        rybbitPricing={posthogExtendedData.rybbitPricing}
+        competitorPricing={posthogExtendedData.competitorPricing}
+        faqItems={posthogExtendedData.faqItems}
+        relatedResources={posthogExtendedData.relatedResources}
       />
     </>
   );

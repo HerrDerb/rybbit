@@ -1,6 +1,5 @@
 import { ComparisonPage } from "../components/ComparisonPage";
-import { matomoComparisonData } from "./comparison-data";
-import { MatomoComparisonContent } from "./ComparisonContent";
+import { matomoComparisonData, matomoExtendedData } from "./comparison-data";
 import type { Metadata } from "next";
 import { createOGImageUrl } from "@/lib/metadata";
 
@@ -80,7 +79,15 @@ export default function Matomo() {
       <ComparisonPage
         competitorName="Matomo"
         sections={matomoComparisonData}
-        comparisonContent={<MatomoComparisonContent />}
+        subtitle={matomoExtendedData.subtitle}
+        introHeading={matomoExtendedData.introHeading}
+        introParagraphs={matomoExtendedData.introParagraphs}
+        chooseRybbit={matomoExtendedData.chooseRybbit}
+        chooseCompetitor={matomoExtendedData.chooseCompetitor}
+        rybbitPricing={matomoExtendedData.rybbitPricing}
+        competitorPricing={matomoExtendedData.competitorPricing}
+        faqItems={matomoExtendedData.faqItems}
+        relatedResources={matomoExtendedData.relatedResources}
       />
     </>
   );

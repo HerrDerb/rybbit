@@ -1,6 +1,5 @@
 import { ComparisonPage } from "../components/ComparisonPage";
-import { simpleAnalyticsComparisonData } from "./comparison-data";
-import { SimpleAnalyticsComparisonContent } from "./ComparisonContent";
+import { simpleAnalyticsComparisonData, simpleAnalyticsExtendedData } from "./comparison-data";
 import type { Metadata } from "next";
 import { createOGImageUrl } from "@/lib/metadata";
 
@@ -65,7 +64,7 @@ const structuredData = {
           name: "Which is better value, Rybbit or Simple Analytics?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Rybbit offers more features at competitive pricing, plus a generous free tier and open-source self-hosting option. Simple Analytics has fixed pricing without a free tier.",
+            text: "Rybbit offers more features at competitive pricing with a 7-day free trial and open-source self-hosting option. Both start at $19/month, but Rybbit includes session replay, funnels, and error tracking.",
           },
         },
       ],
@@ -78,9 +77,17 @@ export default function SimpleAnalytics() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <ComparisonPage
-        competitorName="SimpleAnalytics"
+        competitorName="Simple Analytics"
         sections={simpleAnalyticsComparisonData}
-        comparisonContent={<SimpleAnalyticsComparisonContent />}
+        subtitle={simpleAnalyticsExtendedData.subtitle}
+        introHeading={simpleAnalyticsExtendedData.introHeading}
+        introParagraphs={simpleAnalyticsExtendedData.introParagraphs}
+        chooseRybbit={simpleAnalyticsExtendedData.chooseRybbit}
+        chooseCompetitor={simpleAnalyticsExtendedData.chooseCompetitor}
+        rybbitPricing={simpleAnalyticsExtendedData.rybbitPricing}
+        competitorPricing={simpleAnalyticsExtendedData.competitorPricing}
+        faqItems={simpleAnalyticsExtendedData.faqItems}
+        relatedResources={simpleAnalyticsExtendedData.relatedResources}
       />
     </>
   );

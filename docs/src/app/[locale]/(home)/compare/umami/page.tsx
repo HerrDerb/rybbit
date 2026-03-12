@@ -1,6 +1,5 @@
 import { ComparisonPage } from "../components/ComparisonPage";
-import { umamiComparisonData } from "./comparison-data";
-import { UmamiComparisonContent } from "./ComparisonContent";
+import { umamiComparisonData, umamiExtendedData } from "./comparison-data";
 import type { Metadata } from "next";
 import { createOGImageUrl } from "@/lib/metadata";
 
@@ -80,7 +79,15 @@ export default function Umami() {
       <ComparisonPage
         competitorName="Umami"
         sections={umamiComparisonData}
-        comparisonContent={<UmamiComparisonContent />}
+        subtitle={umamiExtendedData.subtitle}
+        introHeading={umamiExtendedData.introHeading}
+        introParagraphs={umamiExtendedData.introParagraphs}
+        chooseRybbit={umamiExtendedData.chooseRybbit}
+        chooseCompetitor={umamiExtendedData.chooseCompetitor}
+        rybbitPricing={umamiExtendedData.rybbitPricing}
+        competitorPricing={umamiExtendedData.competitorPricing}
+        faqItems={umamiExtendedData.faqItems}
+        relatedResources={umamiExtendedData.relatedResources}
       />
     </>
   );

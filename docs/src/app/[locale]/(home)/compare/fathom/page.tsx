@@ -1,6 +1,5 @@
 import { ComparisonPage } from "../components/ComparisonPage";
-import { fathomComparisonData } from "./comparison-data";
-import { FathomComparisonContent } from "./ComparisonContent";
+import { fathomComparisonData, fathomExtendedData } from "./comparison-data";
 import type { Metadata } from "next";
 import { createOGImageUrl } from "@/lib/metadata";
 
@@ -80,7 +79,15 @@ export default function Fathom() {
       <ComparisonPage
         competitorName="Fathom"
         sections={fathomComparisonData}
-        comparisonContent={<FathomComparisonContent />}
+        subtitle={fathomExtendedData.subtitle}
+        introHeading={fathomExtendedData.introHeading}
+        introParagraphs={fathomExtendedData.introParagraphs}
+        chooseRybbit={fathomExtendedData.chooseRybbit}
+        chooseCompetitor={fathomExtendedData.chooseCompetitor}
+        rybbitPricing={fathomExtendedData.rybbitPricing}
+        competitorPricing={fathomExtendedData.competitorPricing}
+        faqItems={fathomExtendedData.faqItems}
+        relatedResources={fathomExtendedData.relatedResources}
       />
     </>
   );

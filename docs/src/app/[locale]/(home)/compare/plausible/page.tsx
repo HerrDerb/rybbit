@@ -1,6 +1,5 @@
 import { ComparisonPage } from "../components/ComparisonPage";
-import { plausibleComparisonData } from "./comparison-data";
-import { PlausibleComparisonContent } from "./ComparisonContent";
+import { plausibleComparisonData, plausibleExtendedData } from "./comparison-data";
 import type { Metadata } from "next";
 import { createOGImageUrl } from "@/lib/metadata";
 
@@ -65,7 +64,7 @@ const structuredData = {
           name: "Which is more affordable, Rybbit or Plausible?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Rybbit offers competitive pricing starting at $19/month for 100k events with a generous free tier. Both platforms offer similar value, but Rybbit includes more features at each price point.",
+            text: "Plausible starts at $9/month for 10k pageviews, while Rybbit starts at $19/month for events-based pricing. Rybbit includes more features at each price point, including session replay, funnels, and error tracking.",
           },
         },
       ],
@@ -80,7 +79,15 @@ export default function Plausible() {
       <ComparisonPage
         competitorName="Plausible"
         sections={plausibleComparisonData}
-        comparisonContent={<PlausibleComparisonContent />}
+        subtitle={plausibleExtendedData.subtitle}
+        introHeading={plausibleExtendedData.introHeading}
+        introParagraphs={plausibleExtendedData.introParagraphs}
+        chooseRybbit={plausibleExtendedData.chooseRybbit}
+        chooseCompetitor={plausibleExtendedData.chooseCompetitor}
+        rybbitPricing={plausibleExtendedData.rybbitPricing}
+        competitorPricing={plausibleExtendedData.competitorPricing}
+        faqItems={plausibleExtendedData.faqItems}
+        relatedResources={plausibleExtendedData.relatedResources}
       />
     </>
   );

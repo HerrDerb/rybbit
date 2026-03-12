@@ -1,6 +1,5 @@
 import { ComparisonPage } from "../components/ComparisonPage";
-import { cloudflareAnalyticsComparisonData } from "./comparison-data";
-import { CloudflareAnalyticsComparisonContent } from "./ComparisonContent";
+import { cloudflareAnalyticsComparisonData, cloudflareAnalyticsExtendedData } from "./comparison-data";
 import type { Metadata } from "next";
 import { createOGImageUrl } from "@/lib/metadata";
 
@@ -80,7 +79,15 @@ export default function CloudflareAnalytics() {
       <ComparisonPage
         competitorName="Cloudflare Analytics"
         sections={cloudflareAnalyticsComparisonData}
-        comparisonContent={<CloudflareAnalyticsComparisonContent />}
+        subtitle={cloudflareAnalyticsExtendedData.subtitle}
+        introHeading={cloudflareAnalyticsExtendedData.introHeading}
+        introParagraphs={cloudflareAnalyticsExtendedData.introParagraphs}
+        chooseRybbit={cloudflareAnalyticsExtendedData.chooseRybbit}
+        chooseCompetitor={cloudflareAnalyticsExtendedData.chooseCompetitor}
+        rybbitPricing={cloudflareAnalyticsExtendedData.rybbitPricing}
+        competitorPricing={cloudflareAnalyticsExtendedData.competitorPricing}
+        faqItems={cloudflareAnalyticsExtendedData.faqItems}
+        relatedResources={cloudflareAnalyticsExtendedData.relatedResources}
       />
     </>
   );
