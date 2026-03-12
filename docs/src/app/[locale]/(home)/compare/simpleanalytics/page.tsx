@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { createOGImageUrl } from "@/lib/metadata";
 
 export const metadata: Metadata = {
-  title: "Rybbit vs Simple Analytics: Feature Comparison 2025",
+  title: "Rybbit vs Simple Analytics: Feature-Rich Alternative",
   description:
     "Compare Rybbit and Simple Analytics. Both are privacy-focused, but Rybbit offers more advanced features like session replay, funnels, and user journeys.",
   openGraph: {
@@ -45,26 +45,42 @@ const structuredData = {
       mainEntity: [
         {
           "@type": "Question",
-          name: "How does Rybbit compare to Simple Analytics?",
+          name: "Is Rybbit open source while Simple Analytics is not?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Both are privacy-first analytics platforms, but Rybbit offers more advanced features like session replay, funnels, user journeys, and error tracking while maintaining a simple, intuitive interface.",
+            text: "Yes. Rybbit is fully open source under the AGPL v3 license, so you can inspect the code and self-host it. Simple Analytics is proprietary and closed-source with no self-hosting option.",
           },
         },
         {
           "@type": "Question",
-          name: "Is Rybbit more feature-rich than Simple Analytics?",
+          name: "What features does Rybbit have that Simple Analytics doesn't?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes. Rybbit includes session replay, funnel analysis, user journey visualization, Web Vitals monitoring, error tracking, and public dashboards. Simple Analytics focuses on basic metrics and simplicity.",
+            text: "Rybbit includes session replay, funnel analysis, user journey visualization (Sankey diagrams), Web Vitals monitoring, error tracking, user profiles, city-level geolocation, and organization support. Simple Analytics focuses on simpler metrics with an AI assistant.",
           },
         },
         {
           "@type": "Question",
-          name: "Which is better value, Rybbit or Simple Analytics?",
+          name: "How does geolocation differ between the two?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Rybbit offers more features at competitive pricing with a 7-day free trial and open-source self-hosting option. Both start at $19/month, but Rybbit includes session replay, funnels, and error tracking.",
+            text: "Rybbit provides city-level geolocation data, giving you more granular insights into where your visitors are. Simple Analytics only offers country-level data, which limits your ability to understand regional traffic patterns.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Are both equally private?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Both are privacy-first and cookie-free with EU data storage. Rybbit adds a daily rotating salt option for extra privacy, ensuring visitor IDs can't be tracked across days. Both are GDPR compliant without requiring consent banners.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Can I switch from Simple Analytics to Rybbit easily?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. Add Rybbit's tracking script to your site and data collection begins immediately. You can run both tools in parallel during the transition. Setup takes less than 5 minutes.",
           },
         },
       ],

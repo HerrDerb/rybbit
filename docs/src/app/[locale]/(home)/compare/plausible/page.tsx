@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { createOGImageUrl } from "@/lib/metadata";
 
 export const metadata: Metadata = {
-  title: "Rybbit vs Plausible: Feature Comparison 2025",
+  title: "Rybbit vs Plausible: More Features, Same Privacy",
   description:
     "Compare Rybbit and Plausible analytics. Both are privacy-first, but Rybbit offers more features like session replay, funnels, and user journeys at competitive pricing.",
   openGraph: {
@@ -65,6 +65,22 @@ const structuredData = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "Plausible starts at $9/month for 10k pageviews, while Rybbit starts at $19/month for events-based pricing. Rybbit includes more features at each price point, including session replay, funnels, and error tracking.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Can I self-host Rybbit like Plausible?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes, Rybbit is fully self-hostable under the AGPL v3 license. Both use ClickHouse for fast analytics queries. Rybbit's stack is TypeScript-based, while Plausible uses Elixir.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Does Rybbit have session replay?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes, session replay is one of the biggest differentiators. Rybbit offers session replay on the Pro plan, allowing you to watch how users interact with your site. Plausible does not offer this feature at any price point.",
           },
         },
       ],

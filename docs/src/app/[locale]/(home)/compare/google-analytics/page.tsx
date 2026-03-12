@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { createOGImageUrl } from "@/lib/metadata";
 
 export const metadata: Metadata = {
-  title: "Rybbit vs Google Analytics: Privacy-First Alternative 2025",
+  title: "Rybbit vs Google Analytics: Best Privacy-First Alternative",
   description:
     "Compare Rybbit and Google Analytics. Discover why privacy-conscious businesses are switching from GA4 to Rybbit's open-source, cookie-free analytics.",
   openGraph: {
@@ -66,6 +66,22 @@ const structuredData = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "Rybbit offers all essential analytics features plus session replay, funnels, user journeys, and real-time data. While GA4 has more advanced enterprise features, Rybbit provides what most businesses actually need without the complexity.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Can Rybbit track conversions and goals like GA4?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. Rybbit supports conversion goals, funnels, and custom events with attributes. While the setup is simpler than GA4's event configuration, you get the same core conversion tracking capabilities.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Does Rybbit offer real-time analytics?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes, Rybbit provides real-time data out of the box with no sampling. Unlike GA4 which may sample data on high-traffic properties, Rybbit shows every event as it happens.",
           },
         },
       ],
