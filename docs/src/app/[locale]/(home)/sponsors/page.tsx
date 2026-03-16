@@ -93,6 +93,12 @@ const sponsors: Sponsor[] = [
     url: "https://www.mvps.net/",
     amount: 10,
   },
+  {
+    name: "Sayfone",
+    logo: "/sponsors/sayfone.svg",
+    url: "https://sayfone.com/",
+    amount: 10,
+  },
 ];
 
 export default function SponsorsPage() {
