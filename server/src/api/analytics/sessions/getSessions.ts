@@ -1,8 +1,8 @@
+import { FilterParams } from "@rybbit/shared";
 import { FastifyReply, FastifyRequest } from "fastify";
 import { clickhouse } from "../../../db/clickhouse/clickhouse.js";
-import { enrichWithTraits, getTimeStatement, processResults } from "../utils/utils.js";
-import { FilterParams } from "@rybbit/shared";
 import { getFilterStatement } from "../utils/getFilterStatement.js";
+import { enrichWithTraits, getTimeStatement, processResults } from "../utils/utils.js";
 
 export type GetSessionsResponse = {
   session_id: string;

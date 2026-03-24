@@ -313,4 +313,3 @@ export function getFilterStatement(
 
   return result;
 }
-
