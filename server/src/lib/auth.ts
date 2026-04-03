@@ -10,7 +10,7 @@ import { apiKey } from "@better-auth/api-key"
 import { db } from "../db/postgres/postgres.js";
 import * as schema from "../db/postgres/schema.js";
 import { invitation, member, memberSiteAccess, user } from "../db/postgres/schema.js";
-import { DISABLE_SIGNUP, IS_CLOUD } from "./const.js";
+import { API_RATE_LIMIT_WINDOW, DISABLE_SIGNUP, IS_CLOUD, STANDARD_API_RATE_LIMIT } from "./const.js";
 import { addContactToAudience, sendInvitationEmail, sendOtpEmail, sendWelcomeEmail } from "./email/email.js";
 import { onboardingTipsService } from "../services/onboardingTips/onboardingTipsService.js";
 
@@ -18,7 +18,13 @@ dotenv.config();
 
 const pluginList = [
   admin(),
-  apiKey(),
+  apiKey({
+    rateLimit: {
+      enabled: true,
+      timeWindow: API_RATE_LIMIT_WINDOW,
+      maxRequests: STANDARD_API_RATE_LIMIT,
+    },
+  }),
   dash(),
   organization({
     allowUserToCreateOrganization: true,

@@ -104,6 +104,7 @@ import {
 } from "./api/stripe/index.js";
 import {
   addUserToOrganization,
+  createUserApiKey,
   getMyOrganizations,
   getUserOrganizations,
   listOrganizationMembers,
@@ -343,6 +344,7 @@ async function userRoutes(fastify: FastifyInstance) {
   fastify.post("/user/unsubscribe-marketing", authOnly, unsubscribeMarketing);
   fastify.get("/user/unsubscribe-marketing-oneclick", oneClickUnsubscribeMarketing); // Public - for link clicks
   fastify.post("/user/unsubscribe-marketing-oneclick", oneClickUnsubscribeMarketing); // Public - for List-Unsubscribe header
+  fastify.post("/user/api-keys", authOnly, createUserApiKey);
 }
 
 async function gscRoutes(fastify: FastifyInstance) {
