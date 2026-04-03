@@ -1,5 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { authClient } from "../../../lib/auth";
+import { useStripeSubscription } from "../../../lib/subscription/useStripeSubscription";
 
 // List all API keys for the current user
 export const useListApiKeys = () => {
@@ -19,11 +20,16 @@ export const useListApiKeys = () => {
 export const useCreateApiKey = () => {
   const queryClient = useQueryClient();
 
+  const { data: subscription } = useStripeSubscription();
+
   return useMutation({
     mutationFn: async (data: { name: string; expiresIn?: number }) => {
       const response = await authClient.apiKey.create({
         name: data.name,
         expiresIn: data.expiresIn,
+        rateLimitEnabled: true,
+        rateLimitTimeWindow: 60 * 1000, // 1 minute
+        rateLimitMax: subscription?.planName.includes("pro") ? 100 : 20, // 100 req/min for pro, 20 req/min for standard
       });
       if (response.error) {
         throw new Error(response.error.message);
