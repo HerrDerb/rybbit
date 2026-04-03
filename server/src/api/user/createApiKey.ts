@@ -28,7 +28,9 @@ export async function createUserApiKey(
     return reply.status(400).send({ error: "Name is required" });
   }
 
-  let rateLimitMax = STANDARD_API_RATE_LIMIT;
+  let rateLimitEnabled = false;
+  let rateLimitMax: number | undefined;
+  let rateLimitTimeWindow: number | undefined;
 
   if (IS_CLOUD) {
     const activeOrgId = (session.session as any).activeOrganizationId;
@@ -45,9 +47,12 @@ export async function createUserApiKey(
       });
     }
 
-    if (planName.includes("pro") || planName === "custom") {
-      rateLimitMax = PRO_API_RATE_LIMIT;
-    }
+    rateLimitEnabled = true;
+    rateLimitTimeWindow = API_RATE_LIMIT_WINDOW;
+    rateLimitMax =
+      planName.includes("pro") || planName === "custom"
+        ? PRO_API_RATE_LIMIT
+        : STANDARD_API_RATE_LIMIT;
   }
 
   try {
@@ -55,8 +60,8 @@ export async function createUserApiKey(
       body: {
         name,
         expiresIn: expiresIn ?? undefined,
-        rateLimitEnabled: true,
-        rateLimitTimeWindow: API_RATE_LIMIT_WINDOW,
+        rateLimitEnabled,
+        rateLimitTimeWindow,
         rateLimitMax,
         userId: session.user.id,
       },

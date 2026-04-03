@@ -19,11 +19,15 @@ dotenv.config();
 const pluginList = [
   admin(),
   apiKey({
-    rateLimit: {
-      enabled: true,
-      timeWindow: API_RATE_LIMIT_WINDOW,
-      maxRequests: STANDARD_API_RATE_LIMIT,
-    },
+    ...(IS_CLOUD
+      ? {
+          rateLimit: {
+            enabled: true,
+            timeWindow: API_RATE_LIMIT_WINDOW,
+            maxRequests: STANDARD_API_RATE_LIMIT,
+          },
+        }
+      : {}),
   }),
   dash(),
   organization({
