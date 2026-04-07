@@ -8,6 +8,7 @@ import { toast } from "@/components/ui/sonner";
 import { GetOrganizationMembersResponse, updateMemberSiteAccess } from "@/api/admin/endpoints/auth";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Input } from "@/components/ui/input";
 import {
   Dialog,
   DialogContent,
@@ -43,6 +44,7 @@ export function EditMemberDialog({
   const queryClient = useQueryClient();
   const t = useExtracted();
 
+  const [name, setName] = useState("");
   const [role, setRole] = useState<string>("member");
   const [restrictSiteAccess, setRestrictSiteAccess] = useState(false);
   const [selectedSiteIds, setSelectedSiteIds] = useState<number[]>([]);
@@ -51,6 +53,7 @@ export function EditMemberDialog({
 
   useEffect(() => {
     if (open && member) {
+      setName(member.user.name || "");
       setRole(member.role);
       setRestrictSiteAccess(member.siteAccess?.hasRestrictedSiteAccess ?? false);
       setSelectedSiteIds(member.siteAccess?.siteIds ?? []);
@@ -67,6 +70,14 @@ export function EditMemberDialog({
 
     setIsSaving(true);
     try {
+      // Update name if changed
+      if (name !== (member.user.name || "")) {
+        await authClient.admin.updateUser({
+          userId: member.userId,
+          data: { name },
+        });
+      }
+
       // If promoting from member to admin/owner, clear site restrictions first
       // (must happen while still a member, since the API rejects updates for non-members)
       if (member.role === "member" && role !== "member" && member.siteAccess?.hasRestrictedSiteAccess) {
@@ -141,6 +152,16 @@ export function EditMemberDialog({
           <div className="grid gap-2">
             <Label>{t("Email")}</Label>
             <div className="text-sm text-neutral-500 dark:text-neutral-300">{member.user.email}</div>
+          </div>
+
+          <div className="grid gap-2">
+            <Label htmlFor="name">{t("Name")}</Label>
+            <Input
+              id="name"
+              value={name}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
+              placeholder={t("Name")}
+            />
           </div>
 
           {isOwner && (
