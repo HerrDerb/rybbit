@@ -134,6 +134,7 @@ import { handleIdentify } from "./services/tracker/identifyService.js";
 import { trackEvent } from "./services/tracker/trackEvent.js";
 import { usageService } from "./services/usageService.js";
 import { weeklyReportService } from "./services/weekyReports/weeklyReportService.js";
+import { handleAppSumoWebhook, activateAppSumoLicense } from "./api/as/index.js";
 
 // Pre-composed middleware chains for common auth patterns
 // Cast as any to work around Fastify's type inference limitations with preHandler
@@ -379,9 +380,6 @@ async function stripeAdminRoutes(fastify: FastifyInstance) {
     fastify.get("/admin/organizations", adminOnly, getAdminOrganizations);
     fastify.get("/admin/service-event-count", adminOnly, getAdminServiceEventCount);
     fastify.post("/admin/telemetry", collectTelemetry); // Public - telemetry collection
-
-    // AppSumo Routes
-    const { activateAppSumoLicense, handleAppSumoWebhook } = await import("./api/as/index.js");
 
     fastify.post("/as/activate", authOnly, activateAppSumoLicense);
     fastify.post("/as/webhook", handleAppSumoWebhook); // Public - AppSumo webhook
