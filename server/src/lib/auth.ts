@@ -14,6 +14,7 @@ import { API_RATE_LIMIT_WINDOW, DISABLE_SIGNUP, IS_CLOUD, STANDARD_API_RATE_LIMI
 import {
   addContactToAudience,
   sendChangeEmailVerification,
+  sendEmailVerificationLink,
   sendInvitationEmail,
   sendOtpEmail,
   sendWelcomeEmail,
@@ -111,6 +112,18 @@ export const auth = betterAuth({
     // Disable email verification for now
     requireEmailVerification: false,
     disableSignUp: DISABLE_SIGNUP,
+  },
+  emailVerification: {
+    sendVerificationEmail: async ({
+      user,
+      url,
+    }: {
+      user: { email: string };
+      url: string;
+      token: string;
+    }) => {
+      await sendEmailVerificationLink(user.email, url);
+    },
   },
   socialProviders: {
     google: {
