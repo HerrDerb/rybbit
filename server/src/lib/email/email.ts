@@ -104,6 +104,26 @@ export const sendOtpEmail = async (email: string, otp: string, type: OtpEmailTyp
   await sendEmail(email, OTP_SUBJECTS[type], html);
 };
 
+export const sendChangeEmailVerification = async (
+  currentEmail: string,
+  newEmail: string,
+  verificationUrl: string
+) => {
+  const html = `
+    <div style="font-family: Arial, sans-serif; max-width: 560px; margin: 0 auto; padding: 24px; color: #111;">
+      <h2 style="margin: 0 0 16px;">Confirm your new email</h2>
+      <p>We received a request to change the email on your Rybbit account from <strong>${currentEmail}</strong> to <strong>${newEmail}</strong>.</p>
+      <p>Click the button below to confirm the change. If you didn't request this, you can safely ignore this email.</p>
+      <p style="margin: 24px 0;">
+        <a href="${verificationUrl}" style="background: #111; color: #fff; padding: 12px 20px; border-radius: 6px; text-decoration: none; display: inline-block;">Confirm email change</a>
+      </p>
+      <p style="font-size: 12px; color: #666; word-break: break-all;">Or paste this link into your browser: ${verificationUrl}</p>
+    </div>
+  `;
+
+  await sendEmail(currentEmail, "Confirm your email change on Rybbit", html);
+};
+
 export const sendInvitationEmail = async (
   email: string,
   invitedBy: string,

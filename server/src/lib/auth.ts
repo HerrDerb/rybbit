@@ -11,7 +11,13 @@ import { db } from "../db/postgres/postgres.js";
 import * as schema from "../db/postgres/schema.js";
 import { invitation, member, memberSiteAccess, user } from "../db/postgres/schema.js";
 import { API_RATE_LIMIT_WINDOW, DISABLE_SIGNUP, IS_CLOUD, STANDARD_API_RATE_LIMIT } from "./const.js";
-import { addContactToAudience, sendInvitationEmail, sendOtpEmail, sendWelcomeEmail } from "./email/email.js";
+import {
+  addContactToAudience,
+  sendChangeEmailVerification,
+  sendInvitationEmail,
+  sendOtpEmail,
+  sendWelcomeEmail,
+} from "./email/email.js";
 import { onboardingTipsService } from "../services/onboardingTips/onboardingTipsService.js";
 
 dotenv.config();
@@ -135,6 +141,18 @@ export const auth = betterAuth({
     },
     changeEmail: {
       enabled: true,
+      sendChangeEmailConfirmation: async ({
+        user,
+        newEmail,
+        url,
+      }: {
+        user: { email: string };
+        newEmail: string;
+        url: string;
+        token: string;
+      }) => {
+        await sendChangeEmailVerification(user.email, newEmail, url);
+      },
     },
   },
   plugins: pluginList,
