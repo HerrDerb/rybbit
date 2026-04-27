@@ -16,8 +16,8 @@ import { authClient } from "@/lib/auth";
 import { useEffect } from "react";
 import { AppSumoPlan } from "../../../components/subscription/AppSumoPlan";
 
-export default function OrganizationSubscriptionPage() {
-  useSetPageTitle("Organization Subscription");
+export default function OrganizationBillingPage() {
+  useSetPageTitle("Organization Billing");
   const t = useExtracted();
   const { data: activeSubscription, isLoading: isLoadingSubscription } = useStripeSubscription();
 

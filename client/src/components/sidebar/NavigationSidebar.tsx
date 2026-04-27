@@ -54,9 +54,9 @@ export function NavigationSidebar() {
             />
             {IS_CLOUD && (
               <Sidebar.Item
-                label={t("Subscription")}
-                active={pathname.startsWith("/settings/subscription")}
-                href="/settings/subscription"
+                label={t("Billing")}
+                active={pathname.startsWith("/settings/billing")}
+                href="/settings/billing"
                 icon={<CreditCard className="w-4 h-4" />}
               />
             )}

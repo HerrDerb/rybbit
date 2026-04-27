@@ -13,11 +13,12 @@ import {
   pixelBasedPreset,
 } from "@react-email/components";
 import * as React from "react";
-import type { OrganizationReport, MetricData } from "../../../services/weekyReports/weeklyReportTypes.js";
+import type { SiteReport, MetricData } from "../../../services/weekyReports/weeklyReportTypes.js";
 
 interface WeeklyReportEmailProps {
   userName: string;
-  organizationReport: OrganizationReport;
+  organizationName: string;
+  site: SiteReport;
 }
 
 interface MetricCardProps {
@@ -242,13 +243,13 @@ const TopListSection = ({ title, items, renderLabel, showFavicon, labelClassName
   );
 };
 
-export const WeeklyReportEmail = ({ userName, organizationReport }: WeeklyReportEmailProps) => {
+export const WeeklyReportEmail = ({ userName, organizationName, site }: WeeklyReportEmailProps) => {
   const currentYear = new Date().getFullYear();
 
   return (
     <Html>
       <Head />
-      <Preview>Weekly Analytics Report for {organizationReport.organizationName}</Preview>
+      <Preview>Weekly Analytics Report for {organizationName}</Preview>
       <Tailwind
         config={{
           presets: [pixelBasedPreset],
@@ -281,116 +282,113 @@ export const WeeklyReportEmail = ({ userName, organizationReport }: WeeklyReport
 
             <Text className="text-darkText text-base leading-relaxed mb-8">
               Here's your weekly analytics summary for{" "}
-              <span className="font-semibold">{organizationReport.sites[0].siteDomain}</span>.
+              <span className="font-semibold">{site.siteDomain}</span>.
             </Text>
 
-            {/* Sites Reports */}
-            {organizationReport.sites.map(site => (
-              <Section key={site.siteId} className="mb-10">
-                {/* Metrics Cards */}
-                <table style={{ width: "100%", marginBottom: "24px" }}>
-                  <tbody>
-                    <tr>
-                      <td style={{ width: "50%", paddingRight: "6px", paddingBottom: "12px" }}>
-                        <MetricCard
-                          label="Sessions"
-                          currentValue={formatNumber(site.currentWeek.sessions)}
-                          growth={calculateGrowth(site.currentWeek.sessions, site.previousWeek.sessions)}
-                          isPositive={site.currentWeek.sessions >= site.previousWeek.sessions}
-                        />
-                      </td>
-                      <td style={{ width: "50%", paddingLeft: "6px", paddingBottom: "12px" }}>
-                        <MetricCard
-                          label="Pageviews"
-                          currentValue={formatNumber(site.currentWeek.pageviews)}
-                          growth={calculateGrowth(site.currentWeek.pageviews, site.previousWeek.pageviews)}
-                          isPositive={site.currentWeek.pageviews >= site.previousWeek.pageviews}
-                        />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td style={{ width: "50%", paddingRight: "6px", paddingBottom: "12px" }}>
-                        <MetricCard
-                          label="Unique Users"
-                          currentValue={formatNumber(site.currentWeek.users)}
-                          growth={calculateGrowth(site.currentWeek.users, site.previousWeek.users)}
-                          isPositive={site.currentWeek.users >= site.previousWeek.users}
-                        />
-                      </td>
-                      <td style={{ width: "50%", paddingLeft: "6px", paddingBottom: "12px" }}>
-                        <MetricCard
-                          label="Avg Duration"
-                          currentValue={formatDuration(site.currentWeek.session_duration)}
-                          growth={calculateGrowth(
-                            site.currentWeek.session_duration,
-                            site.previousWeek.session_duration
-                          )}
-                          isPositive={site.currentWeek.session_duration >= site.previousWeek.session_duration}
-                        />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td style={{ width: "50%", paddingRight: "6px" }}>
-                        <MetricCard
-                          label="Pages/Session"
-                          currentValue={safeToFixed(site.currentWeek.pages_per_session, 1)}
-                          growth={calculateGrowth(
-                            site.currentWeek.pages_per_session,
-                            site.previousWeek.pages_per_session
-                          )}
-                          isPositive={
-                            (site.currentWeek.pages_per_session ?? 0) >= (site.previousWeek.pages_per_session ?? 0)
-                          }
-                        />
-                      </td>
-                      <td style={{ width: "50%", paddingLeft: "6px" }}>
-                        <MetricCard
-                          label="Bounce Rate"
-                          currentValue={`${safeToFixed(site.currentWeek.bounce_rate, 1)}%`}
-                          growth={calculateGrowth(site.currentWeek.bounce_rate, site.previousWeek.bounce_rate)}
-                          isPositive={(site.currentWeek.bounce_rate ?? 0) <= (site.previousWeek.bounce_rate ?? 0)}
-                        />
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+            <Section className="mb-10">
+              {/* Metrics Cards */}
+              <table style={{ width: "100%", marginBottom: "24px" }}>
+                <tbody>
+                  <tr>
+                    <td style={{ width: "50%", paddingRight: "6px", paddingBottom: "12px" }}>
+                      <MetricCard
+                        label="Sessions"
+                        currentValue={formatNumber(site.currentWeek.sessions)}
+                        growth={calculateGrowth(site.currentWeek.sessions, site.previousWeek.sessions)}
+                        isPositive={site.currentWeek.sessions >= site.previousWeek.sessions}
+                      />
+                    </td>
+                    <td style={{ width: "50%", paddingLeft: "6px", paddingBottom: "12px" }}>
+                      <MetricCard
+                        label="Pageviews"
+                        currentValue={formatNumber(site.currentWeek.pageviews)}
+                        growth={calculateGrowth(site.currentWeek.pageviews, site.previousWeek.pageviews)}
+                        isPositive={site.currentWeek.pageviews >= site.previousWeek.pageviews}
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style={{ width: "50%", paddingRight: "6px", paddingBottom: "12px" }}>
+                      <MetricCard
+                        label="Unique Users"
+                        currentValue={formatNumber(site.currentWeek.users)}
+                        growth={calculateGrowth(site.currentWeek.users, site.previousWeek.users)}
+                        isPositive={site.currentWeek.users >= site.previousWeek.users}
+                      />
+                    </td>
+                    <td style={{ width: "50%", paddingLeft: "6px", paddingBottom: "12px" }}>
+                      <MetricCard
+                        label="Avg Duration"
+                        currentValue={formatDuration(site.currentWeek.session_duration)}
+                        growth={calculateGrowth(
+                          site.currentWeek.session_duration,
+                          site.previousWeek.session_duration
+                        )}
+                        isPositive={site.currentWeek.session_duration >= site.previousWeek.session_duration}
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style={{ width: "50%", paddingRight: "6px" }}>
+                      <MetricCard
+                        label="Pages/Session"
+                        currentValue={safeToFixed(site.currentWeek.pages_per_session, 1)}
+                        growth={calculateGrowth(
+                          site.currentWeek.pages_per_session,
+                          site.previousWeek.pages_per_session
+                        )}
+                        isPositive={
+                          (site.currentWeek.pages_per_session ?? 0) >= (site.previousWeek.pages_per_session ?? 0)
+                        }
+                      />
+                    </td>
+                    <td style={{ width: "50%", paddingLeft: "6px" }}>
+                      <MetricCard
+                        label="Bounce Rate"
+                        currentValue={`${safeToFixed(site.currentWeek.bounce_rate, 1)}%`}
+                        growth={calculateGrowth(site.currentWeek.bounce_rate, site.previousWeek.bounce_rate)}
+                        isPositive={(site.currentWeek.bounce_rate ?? 0) <= (site.previousWeek.bounce_rate ?? 0)}
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
 
-                {/* Top Lists Section */}
-                <div className="mb-6">
-                  <TopListSection
-                    title="Top Countries"
-                    items={site.topCountries}
-                    renderLabel={item => getCountryDisplay(item.value)}
-                  />
-                  <TopListSection
-                    title="Top Pages"
-                    items={site.topPages}
-                    renderLabel={item => item.value}
-                    labelClassName="text-darkText text-sm m-0 truncate max-w-[280px]"
-                  />
-                  <TopListSection
-                    title="Top Referrers"
-                    items={site.topReferrers}
-                    renderLabel={item => item.value}
-                    showFavicon={true}
-                    labelClassName="text-darkText text-sm m-0 truncate"
-                  />
-                  <TopListSection
-                    title="Device Breakdown"
-                    items={site.deviceBreakdown}
-                    renderLabel={item => item.value}
-                    labelClassName="text-darkText text-sm m-0 capitalize"
-                    className="bg-cardBg border border-borderColor rounded-lg p-4"
-                  />
-                </div>
+              {/* Top Lists Section */}
+              <div className="mb-6">
+                <TopListSection
+                  title="Top Countries"
+                  items={site.topCountries}
+                  renderLabel={item => getCountryDisplay(item.value)}
+                />
+                <TopListSection
+                  title="Top Pages"
+                  items={site.topPages}
+                  renderLabel={item => item.value}
+                  labelClassName="text-darkText text-sm m-0 truncate max-w-[280px]"
+                />
+                <TopListSection
+                  title="Top Referrers"
+                  items={site.topReferrers}
+                  renderLabel={item => item.value}
+                  showFavicon={true}
+                  labelClassName="text-darkText text-sm m-0 truncate"
+                />
+                <TopListSection
+                  title="Device Breakdown"
+                  items={site.deviceBreakdown}
+                  renderLabel={item => item.value}
+                  labelClassName="text-darkText text-sm m-0 capitalize"
+                  className="bg-cardBg border border-borderColor rounded-lg p-4"
+                />
+              </div>
 
-                <Text className="text-darkText text-base leading-relaxed mb-4">
-                  <Link href={`https://app.rybbit.io/${site.siteId}`} className="text-brand underline">
-                    View full dashboard
-                  </Link>
-                </Text>
-              </Section>
-            ))}
+              <Text className="text-darkText text-base leading-relaxed mb-4">
+                <Link href={`https://app.rybbit.io/${site.siteId}`} className="text-brand underline">
+                  View full dashboard
+                </Link>
+              </Text>
+            </Section>
 
             <Text className="text-mutedText text-sm leading-relaxed">
               This report covers the last 7 days of analytics data.

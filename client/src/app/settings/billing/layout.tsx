@@ -3,7 +3,7 @@
 import { useExtracted } from "next-intl";
 import { authClient } from "../../../lib/auth";
 
-export default function SubscriptionLayout({ children }: { children: React.ReactNode }) {
+export default function BillingLayout({ children }: { children: React.ReactNode }) {
   const t = useExtracted();
   const { data: session } = authClient.useSession();
   const { data: activeOrg } = authClient.useActiveOrganization();
@@ -15,7 +15,7 @@ export default function SubscriptionLayout({ children }: { children: React.React
   return (
     <div className="space-y-5">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">{t("Subscription")}</h1>
+        <h1 className="text-3xl font-bold tracking-tight">{t("Billing")}</h1>
         <p className="text-neutral-500 dark:text-neutral-400">
           {t("Manage your subscription and billing.")}
         </p>

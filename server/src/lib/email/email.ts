@@ -8,7 +8,7 @@ import { OnboardingTipEmail } from "./templates/OnboardingTipEmail.js";
 import { OtpEmail, type OtpEmailType } from "./templates/OtpEmail.js";
 import { ReengagementEmail } from "./templates/ReengagementEmail.js";
 import { WeeklyReportEmail } from "./templates/WeeklyReportEmail.js";
-import type { OrganizationReport } from "../../services/weekyReports/weeklyReportTypes.js";
+import type { SiteReport } from "../../services/weekyReports/weeklyReportTypes.js";
 import type { OnboardingTipContent } from "../../services/onboardingTips/onboardingTipsContent.js";
 import type { ReengagementContent } from "../../services/reengagement/reengagementContent.js";
 
@@ -201,16 +201,18 @@ export const sendApproachingLimitEmail = async (
 export const sendWeeklyReportEmail = async (
   email: string,
   userName: string,
-  organizationReport: OrganizationReport
+  organizationName: string,
+  site: SiteReport
 ) => {
   const html = await render(
     WeeklyReportEmail({
       userName,
-      organizationReport,
+      organizationName,
+      site,
     })
   );
 
-  const subject = `Weekly Analytics Report - ${organizationReport.sites[0].siteName}`;
+  const subject = `Weekly Analytics Report - ${site.siteName}`;
 
   await sendEmail(email, subject, html);
 };
