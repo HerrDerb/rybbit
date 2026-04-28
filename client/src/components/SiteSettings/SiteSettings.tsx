@@ -37,7 +37,8 @@ export function SiteSettings({ siteId, trigger }: { siteId: number; trigger?: Re
 function SiteSettingsInner({ siteMetadata, trigger }: { siteMetadata: SiteResponse; trigger?: React.ReactNode }) {
   const t = useExtracted();
   const { data: userOrganizationsData } = useUserOrganizations();
-  const disabled = !userOrganizationsData?.[0]?.role || userOrganizationsData?.[0]?.role === "member";
+  const siteOrgMembership = userOrganizationsData?.find((org) => org.id === siteMetadata.organizationId);
+  const disabled = !siteOrgMembership?.role || siteOrgMembership.role === "member";
 
   const [dialogOpen, setDialogOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("settings");
